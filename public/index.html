@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
         <script src="JS/script.js" defer> </script>
         <title> CodeJam </title>
 
@@ -14,10 +15,24 @@
 
     <body>
 
+        <div class="bg-form">
+
+            <form method="POST" action="">
+                <h2> Inscreva-se na CodeJam </h2>
+
+                <input type="text" placeholder="Username:">
+
+                <a href=""> <p> Precisa de ajuda com o cadastro? Aperte aqui! </p> </a>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+
+        </div>
+
         <nav>
             <!-- Logo -->
             <div>
-                <h1> CodeJam </h1>
+                <h1> <a href="/"> CodeJam </a> </h1>
             </div>
 
             <!-- Navegação -->
@@ -25,6 +40,11 @@
                 <p id="cad-form-btn"> Inscrever-se </p>
             </div>
         </nav>
+
+        <!-- Cronômetro -->
+        <div>
+            <h2> Faltam X dias e XX:XX horas para o início da CodeJam! </h2>
+        </div>
 
         <main>
 
@@ -66,7 +86,13 @@
 
                 <!-- Usuário -->
                 <div id="voce-lugar">
+                    <h2 id="voce-ranking">  </h2>
 
+                    <div>
+                        <h2 class="ranking-nome">  </h2>
+
+                        <p class="ranking-pontos">  </p>
+                    </div>
                 </div>
 
             </section>
