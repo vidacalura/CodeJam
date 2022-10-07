@@ -2,7 +2,7 @@ const socket = require("socket.io");
 
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const server = app.listen(port);
 let io = socket(server);
@@ -12,6 +12,10 @@ app.use(express.static("./public/"));
 
 app.get("/", (req, res) => {
     res.sendFile("index.html", { root: __dirname });
+});
+
+app.get("/sobre", (req, res) => {
+    res.sendFile("./public/sobre.html", { root: __dirname });
 });
 
 

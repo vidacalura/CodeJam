@@ -1,6 +1,6 @@
 *{
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 0;
     margin: 0;
 
@@ -8,13 +8,13 @@
 
 body{
 
-    background-color: darkgray;
-    overflow: hidden;
+    background-color: #1a1a1b;
+    color: white;
+    overflow-x: hidden;
 
 }
 nav{
 
-    background-color: white;
     display: flex;
     width: 100vw - 2.5rem;
     padding: 1.25rem 2rem;
@@ -25,19 +25,47 @@ nav{
 a{
 
     text-decoration: none;
-    color: black;
-    font-weight: bold;
+    color: #7389db;
 
 }
-.nav-nav{
+#nav-nav{
 
     display: flex;
-    justify-content: space-between;
+    gap: 1.5rem;
+    font-weight: normal;
 
 }
-#cad-form-btn{
+.logo{
 
+    font-weight: bolder;
+    cursor: default;
+
+}
+#nav-nav a{
+
+    color: white;
+
+}
+#nav-nav a:hover{
+
+    border-bottom: solid 2px #7389db;
+
+}
+#inscricao-btn{
+
+    background-color: #7389db;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.2s;
+
+}
+#inscricao-btn:hover{
+
+    box-shadow: 9px 9px 17px rgb(0, 0, 0, 0.4);
 
 }
 
@@ -48,16 +76,84 @@ a{
     width: 80vw;
 
 }
+.top-3{
+
+    width: 100vw;
+    display: flex;
+    gap: 3vw;
+    align-items: flex-end;
+
+}
+.ranking-top-3{
+
+    background-color: #2f3037;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 0.3);
+
+}
+.dados-ranking{
+
+    padding: 25% 2rem 0px 2rem;
+
+}
+.container-ranking-pontos{
+
+    margin: 0 auto;
+    background-color: #7389db;
+    width: 20%;
+    padding: 0.4rem 0.2rem;
+    border-radius: 8px;
+
+}
+#lugar-2{
+
+    width: 25vw;
+    height: 37.5vh;
+
+}
+#lugar-2 h2{
+
+    font-size: 30px;
+    padding-bottom: 0.5rem;
+
+}
+#lugar-1{
+
+    width: 30vw;
+    height: 45vh;
+
+}
+#lugar-1 h2{
+
+    font-size: 40px;
+    padding-bottom: 0.5rem;
+
+}
+#lugar-3{
+
+    width: 20vw;
+    height: 30vh;
+
+}
+#lugar-3 h2{
+
+    font-size: 26px;
+    padding-bottom: 0.5rem;
+
+}
 .ranking{
 
     height: 3rem;
-    width: 100% - 2rem;
+    width: 70% - 2rem;
     padding: 1rem 2rem;
     margin: 2rem 0px;
-    background-color: aqua;
+    background-color: #2f3037;
     border-radius: 16px;
     display: flex;
     align-items: center;
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 0.2);
 
 }
 .ranking div{
@@ -77,6 +173,7 @@ a{
     width: 100vw;
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.5);
+    display: none;
 
 }
 .bg-form form{
@@ -86,5 +183,90 @@ a{
     padding: 3rem;
     text-align: center;
     background-color: red;
+
+}
+
+.main-sobre{
+
+    text-align: center;
+    padding: 2rem 16vw;
+    font-size: 18px;
+
+}
+.topico-titulo{
+
+    width: auto;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 3rem; 
+    margin-bottom: 3rem; 
+
+}
+.subtopico-titulo{
+
+    text-align: center;
+    font-size: 22px;
+    margin-top: 2.5rem; 
+    margin-bottom: 2rem; 
+
+}
+.sobre-titulo-1{
+
+    border-bottom: 2px solid white;
+    padding-bottom: 0.5rem;
+    margin-left: 22vw;
+    margin-right: 22vw;
+
+}
+.patrocinios-div{
+
+    width: 28rem;
+    height: 8rem;
+    background-color: #36393e;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    box-shadow: 3px 3px 9px rgb(0, 0, 0, 0.3);
+
+}
+.patrocinios-div img{
+
+    height: 4rem;
+    width: auto;
+    border-radius: 6px;
+
+}
+
+.main-ajuda{
+
+    padding: 2rem 20vw;
+
+}
+#aviso-ajuda{
+
+    text-align: center;
+    background-color: #36393e;
+    width: 50vw;
+    padding: 1.5rem 0.75rem;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 16px 16px #7389db;
+
+}
+.img-container{
+
+    width: 40vw;
+    margin: 0 auto;
+    padding: 2rem;
+
+}
+.codewars-img{
+
+    width: 40vw;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.4);
 
 }

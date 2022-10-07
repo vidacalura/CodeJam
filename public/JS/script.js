@@ -9,14 +9,17 @@ const pontosCompetidoresText = document.querySelectorAll(".ranking-pontos");
 
 socket.on("participantesRes", (data) => {
     const participantesOrdenados = data;
+    console.log(participantesOrdenados.length)
 
-    for (let i = 0; i < 3; i++){
-        nomeCompetidoresText[i].textContent = participantesOrdenados[participantesOrdenados.length - (i + 1)].username;
-        pontosCompetidoresText[i].textContent = participantesOrdenados[participantesOrdenados.length - (i + 1)].honor;
-    }
+    nomeCompetidoresText[0].textContent = participantesOrdenados[participantesOrdenados.length - 2].username;
+    pontosCompetidoresText[0].textContent = participantesOrdenados[participantesOrdenados.length - 2].honor;
+    nomeCompetidoresText[1].textContent = participantesOrdenados[participantesOrdenados.length - 1].username;
+    pontosCompetidoresText[1].textContent = participantesOrdenados[participantesOrdenados.length - 1].honor;
+    nomeCompetidoresText[2].textContent = participantesOrdenados[participantesOrdenados.length - 3].username;
+    pontosCompetidoresText[2].textContent = participantesOrdenados[participantesOrdenados.length - 3].honor ;
 
     // Usuário
-    if (localStorage.getItem("username")){
+    if (localStorage.getItem("username") != null){
         const usuarioRankingDiv = document.getElementById("voce-lugar");
         const usuarioRankingNumTxt = document.getElementById("voce-ranking");
         usuarioRankingDiv.classList.add("ranking");
