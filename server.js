@@ -8,14 +8,18 @@ const server = app.listen(port);
 let io = socket(server);
 
 app.use(express.json());
-app.use(express.static("./public/"));
+app.use(express.static("./dist/"));
 
 app.get("/", (req, res) => {
     res.sendFile("index.html", { root: __dirname });
 });
 
 app.get("/sobre", (req, res) => {
-    res.sendFile("./public/sobre.html", { root: __dirname });
+    res.sendFile("./dist/sobre.html", { root: __dirname });
+});
+
+app.get("/ajuda", (req, res) => {
+    res.sendFile("./dist/ajuda.html", { root: __dirname });
 });
 
 

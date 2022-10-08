@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+        <script src="JS/script.js" defer> </script>
+        <title> CodeJam </title>
+
+    </head>
+
+    <body>
+
+        <div id="bg-form">
+
+            <form id="inscricao-form" method="POST" action="">
+                <div id="form-pt-dir">
+                    <h2> SEJA BEM-VINDO À CODEJAM! </h2>
+
+                    <input id="cad-username-textbox" type="text" placeholder="Username:">
+
+                    <a href="/ajuda"> <p> Precisa de ajuda com o cadastro? <br> Aperte aqui! </p> </a>
+
+                    <input id="cad-btn" type="submit" value="Inscrever-se">
+                </div>
+
+                <div id="form-pt-esq">
+                    <img src="imgs/codefib.png" class="fibonacci" alt="Demonstração do site Codewars">
+
+                    <h3 class="esq-texto"> Venha e torne-se um campeão! </h3>
+                </div>
+            </form>
+
+        </div>
+
+        <nav>
+            <!-- Logo -->
+            <div>
+                <h1 class="logo"> CodeJam </h1>
+            </div>
+
+            <!-- Navegação -->
+            <div id="nav-nav">
+                <p> <a href="/"> Ranking </a> </p>
+
+                <p> <a href="/sobre"> Sobre </a> </p>
+            </div>
+
+            <!-- Inscrição -->
+            <div id="inscricao-btn">
+                <p id="cad-form-btn"> Inscrever-se </p>
+            </div>
+        </nav>
+
+        <!-- Cronômetro -->
+        <div id="cronometro-div">
+            <h2 id="cronometro-texto"> Faltam X dias e XX:XX horas para o início da CodeJam! </h2>
+        </div>
+
+        <main>
+
+            <!-- Rankings -->
+            <section id="ranking-section">
+
+                <div class="top-3">
+
+                    <!-- 2º Lugar -->
+                    <div id="lugar-2" class="ranking-top-3">
+                        <div class="dados-ranking">
+                            <h2 class="ranking-nome"> Carregando... </h2>
+
+                            <div class="container-ranking-pontos">
+                                <p class="ranking-pontos">  </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1º Lugar -->
+                    <div id="lugar-1" class="ranking-top-3">
+                        <div class="dados-ranking">
+                            <h2 class="ranking-nome"> Carregando... </h2>
+
+                            <div class="container-ranking-pontos">
+                                <p class="ranking-pontos">  </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3º Lugar -->
+                    <div id="lugar-3" class="ranking-top-3">
+                        <div class="dados-ranking">
+                            <h2 class="ranking-nome"> Carregando... </h2>
+
+                            <div class="container-ranking-pontos">
+                                <p class="ranking-pontos">  </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Usuário -->
+                <div id="voce-lugar">
+                    <h2 id="voce-ranking">  </h2>
+
+                    <div>
+                        <h2 class="ranking-nome">  </h2>
+
+                        <p class="ranking-pontos">  </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+        
+    </body>
+
+</html>
