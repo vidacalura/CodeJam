@@ -15,16 +15,24 @@
 
     <body>
 
-        <div class="bg-form">
+        <div id="bg-form">
 
-            <form method="POST" action="">
-                <h2> Inscreva-se na CodeJam </h2>
+            <form id="inscricao-form" method="POST" action="">
+                <div id="form-pt-dir">
+                    <h2> SEJA BEM-VINDO À CODEJAM! </h2>
 
-                <input type="text" placeholder="Username:">
+                    <input id="cad-username-textbox" type="text" placeholder="Username:">
 
-                <a href=""> <p> Precisa de ajuda com o cadastro? Aperte aqui! </p> </a>
+                    <a href="/ajuda"> <p> Precisa de ajuda com o cadastro? <br> Aperte aqui! </p> </a>
 
-                <input type="submit" value="Cadastrar">
+                    <input id="cad-btn" type="submit" value="Inscrever-se">
+                </div>
+
+                <div id="form-pt-esq">
+                    <img src="imgs/codefib.png" class="fibonacci" alt="Demonstração do site Codewars">
+
+                    <h3 class="esq-texto"> Venha e torne-se um campeão! </h3>
+                </div>
             </form>
 
         </div>
@@ -48,10 +56,10 @@
             </div>
         </nav>
 
-        <!-- Cronômetro
-        <div>
-            <h2> Faltam X dias e XX:XX horas para o início da CodeJam! </h2>
-        </div> -->
+        <!-- Cronômetro -->
+        <div id="cronometro-div">
+            <h2 id="cronometro-texto"> Faltam X dias e XX:XX horas para o início da CodeJam! </h2>
+        </div>
 
         <main>
 

@@ -69,6 +69,23 @@ a{
 
 }
 
+#cronometro-div{
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1b;
+    text-align: center;
+    padding-top: 12rem;
+
+}
+#cronometro-texto{
+
+    font-size: 36px;
+    font-weight: bold;
+
+}
+
 #ranking-section{
 
     padding-top: 1rem;
@@ -166,7 +183,7 @@ a{
 
 }
 
-.bg-form{
+#bg-form{
 
     padding-top: 15vh;
     position: absolute;
@@ -174,15 +191,87 @@ a{
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.5);
     display: none;
+    z-index: 1;
 
 }
-.bg-form form{
+#inscricao-form h2{
+
+    padding: 0px 2rem;
+
+}
+#inscricao-form{
 
     margin: 0 auto;
-    width: 50vh;
-    padding: 3rem;
+    width: 70vw;
+    height: 460px;
     text-align: center;
-    background-color: red;
+    background-color: rgba(23, 23, 23, 1);
+    display: flex;
+    border-radius: 4px;
+    box-shadow: 7px 7px 19px rgb(0, 0, 0, 0.4);
+    overflow: hidden;
+
+}
+#inscricao-form div{
+
+    width: 50%;
+
+}
+#form-pt-dir{
+
+    padding: 4.5rem 3rem;
+
+}
+#form-pt-esq{
+
+    padding: 3rem 2rem;
+    background-color: rgba(37, 37, 37, 1);
+
+}
+#cad-username-textbox{
+
+    width: calc(100% - 5.5rem);
+    padding: 0.75rem 1.25rem;
+    font-size: 16px;
+    background-color: rgba(37, 37, 37, 1);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+
+}
+#cad-btn{
+
+    width: calc(100% - 3rem);
+    background-color: #7389db;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    padding: 0.75rem 0px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
+    margin: 3rem 2rem;
+    cursor: pointer;
+
+}
+.fibonacci{
+
+    width: 100%;
+    height: auto;
+    box-shadow: 3px 3px 7px rgb(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+}
+.esq-texto{
+
+    padding: 1rem 2rem;
+    font-size: 24px;
+    font-weight: bolder;
 
 }
 

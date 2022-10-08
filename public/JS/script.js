@@ -1,13 +1,26 @@
 let socket = io();
 
-const formBtn = document.getElementById("cad-form-btn");
+const formBtn = document.getElementById("inscricao-btn");
+const bgForm = document.getElementById("bg-form");
 const nomeCompetidoresText = document.querySelectorAll(".ranking-nome");
 const pontosCompetidoresText = document.querySelectorAll(".ranking-pontos");
+const cronometroTexto = document.getElementById("cronometro-texto");
 
+cronometro();
 
 /* Registro */
+formBtn.addEventListener("click", () => {
+    bgForm.style.display = "block";
+});
 
-socket.on("participantesRes", (data) => {
+bgForm.addEventListener("click", (e) => {
+    if (e.target.id == bgForm.id){
+        if (bgForm.style.display == "block")
+            bgForm.style.display = "none";
+    }
+});
+
+/*socket.on("participantesRes", (data) => {
     const participantesOrdenados = data;
     console.log(participantesOrdenados.length)
 
@@ -36,5 +49,22 @@ socket.on("participantesRes", (data) => {
         }
 
     }
+}); */
 
-});
+/* Cronômetro */
+async function cronometro(){
+
+    const formatter = new Intl.RelativeTimeFormat("en");
+
+    const dataLancamento = new Date("11/01/2022");
+
+    setInterval(() => {
+
+        const diff = new Date() - dataLancamento;
+        cronometroTexto.textContent = `Faltam ${Math.floor(-diff / (1000*60*60*24))} dias
+        e ${Math.floor(-diff / (1000*60*60) % 24)}:${(Math.round(-diff / (1000*60) % 60) > 10 ? Math.round(-diff / (1000*60) % 60) : "0" + Math.round(-diff / (1000*60) % 60))} 
+        horas para o início da CodeJam!`;
+
+    }, 1000);
+
+}
