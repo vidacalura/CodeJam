@@ -1,4 +1,5 @@
 const socket = require("socket.io");
+const db = require("./db/index");
 
 const express = require("express");
 const app = express();
@@ -25,17 +26,48 @@ app.get("/ajuda", (req, res) => {
 
 io.on("connection", async (socket) => {
 
-    const sampleData = ["GuedeX", "matheusRodrigues", "awesomead"];
+    let usernames = [];
 
-    // Pegar dados (nome) do banco
-    const nomes = sampleData;
+    db.promise()
+    .execute("SELECT * FROM usuarios")
+    .then(async ([rows]) => {
+        // Pegar dados (nome) do banco
+        for (let i = 0; i < rows.length; i++){
+            usernames.push(rows[i].username)
+        }
+        
+        const nomes = usernames;
 
-    // Puxar dados da API do codewars
-    const participantes = await receberDadosAPI(nomes);
+        // Puxar dados da API do codewars
+        const participantes = await receberDadosAPI(nomes);
 
-    const participantesOrdenados = organizarParticipantes(participantes);
+        const participantesOrdenados = organizarParticipantes(participantes);
 
-    io.sockets.emit("participantesRes", participantesOrdenados);
+        io.sockets.emit("participantesRes", participantesOrdenados);
+
+    });
+
+    socket.on("cadastrarNovoUsuario", async (data) => {
+    
+        const URL = "https://www.codewars.com/api/v1/users/" + data;
+        const APIData = await getAPIData(URL);
+        
+        // Validar se conta existe no Codewars
+        if (!APIData.username){
+            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Não foi possível encontrar esta conta :(" });
+        }
+        // Validar se já está cadastrado
+        else if (usuarioExiste(data, usernames)){
+            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Usuário já cadastrado" });
+        }
+        else{
+            db.promise()
+            .execute(`INSERT INTO usuarios (username, data_cad) VALUES('${data}', CURDATE())`);
+
+            io.sockets.emit("cadastroSucesso", { id: socket.id, username: data });
+        }
+
+    });
 
 });
 
@@ -62,6 +94,18 @@ async function getAPIData(url){
     
 } 
 
+function usuarioExiste(nome, nomesTotal){
+
+    for (let i = 0; i < nomesTotal.length; i++){
+        if (nomesTotal[i] == nome){
+            return true;
+        }
+    }  
+    
+    return false;
+
+}
+
 function organizarParticipantes(participantes){
 
     let arrOrdenada = [ participantes[0] ];
@@ -79,11 +123,5 @@ function organizarParticipantes(participantes){
     }
 
     return arrOrdenada;
-
-}
-
-async function receberDadosBD(){
-
-
 
 }

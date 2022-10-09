@@ -68,15 +68,20 @@ a{
     box-shadow: 9px 9px 17px rgb(0, 0, 0, 0.4);
 
 }
+#sessao-div{
+
+    display: none;
+
+}
 
 #cronometro-div{
 
     position: absolute;
-    width: 100vw;
+    width: calc(100vw - 2rem);
     height: 100vh;
     background-color: #1a1a1b;
     text-align: center;
-    padding-top: 12rem;
+    padding: 12rem 1rem 0px 1rem;
 
 }
 #cronometro-texto{
@@ -132,7 +137,7 @@ a{
 }
 #lugar-2 h2{
 
-    font-size: 30px;
+    font-size: 2vw;
     padding-bottom: 0.5rem;
 
 }
@@ -144,7 +149,7 @@ a{
 }
 #lugar-1 h2{
 
-    font-size: 40px;
+    font-size: 3vw;
     padding-bottom: 0.5rem;
 
 }
@@ -156,7 +161,7 @@ a{
 }
 #lugar-3 h2{
 
-    font-size: 26px;
+    font-size: 1.5vw;
     padding-bottom: 0.5rem;
 
 }
@@ -325,7 +330,7 @@ a{
 
     height: 4rem;
     width: auto;
-    border-radius: 6px;
+    border-radius: 20%;
 
 }
 
@@ -359,3 +364,47 @@ a{
     box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.4);
 
 }
+
+@media only screen and (max-width: 900px){
+
+    nav{
+
+        padding: 1rem 0.4rem;
+
+    }
+    .nav-nav{
+
+        justify-content: space-around;
+
+    }
+
+    .main-sobre,
+    .main-ajuda{
+
+        padding: 3rem;
+
+    }
+    .sobre-titulo-1{
+
+        margin-left: 6vw;
+        margin-right: 6vw;
+
+    }
+    .patrocinios-div{
+
+        width: 80vw;
+
+    }
+    .img-container{
+
+        width: 80vw;
+        padding: 2rem 0rem;
+
+    }
+    .codewars-img{
+
+        width: 80vw;
+
+    }
+
+} 
