@@ -82,6 +82,7 @@ a{
     background-color: #1a1a1b;
     text-align: center;
     padding: 12rem 1rem 0px 1rem;
+    display: none;
 
 }
 #cronometro-texto{
@@ -264,6 +265,13 @@ a{
     cursor: pointer;
 
 }
+#erro-cad{
+
+    color: rgb(255, 79, 79);
+    font-weight: bold;
+    padding: 2rem 0px 0px 0px;
+
+}
 .fibonacci{
 
     width: 100%;
@@ -369,12 +377,17 @@ a{
 
     nav{
 
-        padding: 1rem 0.4rem;
+        padding: 1.25rem 0.4rem;
 
     }
     .nav-nav{
 
         justify-content: space-around;
+
+    }
+    .dados-ranking{
+
+        padding: 25% 0px;
 
     }
 
@@ -404,6 +417,12 @@ a{
     .codewars-img{
 
         width: 80vw;
+
+    }
+
+    #form-pt-esq{
+
+        display: none;
 
     }
 

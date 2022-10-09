@@ -4,6 +4,7 @@ const db = require("./db/index");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
+const fetch = require("node-fetch");
 
 const server = app.listen(port);
 let io = socket(server);
@@ -55,6 +56,9 @@ io.on("connection", async (socket) => {
         // Validar se conta existe no Codewars
         if (!APIData.username){
             io.sockets.emit("cadastroErro", { id: socket.id, erro: "Não foi possível encontrar esta conta :(" });
+        }
+        else if (APIData.honor > 2){
+            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Conta inválida." });
         }
         // Validar se já está cadastrado
         else if (usuarioExiste(data, usernames)){

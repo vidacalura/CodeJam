@@ -4,13 +4,25 @@ const formBtn = document.getElementById("inscricao-btn");
 const bgForm = document.getElementById("bg-form");
 const cadTextbox = document.getElementById("cad-username-textbox");
 const cadBtn = document.getElementById("cad-btn");
+const erroText = document.getElementById("erro-cad");
 const sessaoDiv = document.getElementById("sessao-div");
 const sessaoNome = document.getElementById("sessao-nome");
 const nomeCompetidoresText = document.querySelectorAll(".ranking-nome");
 const pontosCompetidoresText = document.querySelectorAll(".ranking-pontos");
 const cronometroTexto = document.getElementById("cronometro-texto");
 
+cad();
 cronometro();
+
+
+function cad(){
+
+    if (window.location.href.includes("cad=true")){
+        if (!localStorage.getItem("username"))
+            bgForm.style.display = "block";
+    }
+
+}
 
 /* Registro */
 formBtn.addEventListener("click", () => {
@@ -27,7 +39,8 @@ bgForm.addEventListener("click", (e) => {
 cadBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    socket.emit("cadastrarNovoUsuario", cadTextbox.value);
+    if (cadTextbox.value.trim() != "")
+        socket.emit("cadastrarNovoUsuario", cadTextbox.value.trim());
 });
 
 
@@ -78,8 +91,11 @@ socket.on("cadastroSucesso", (data) => {
 socket.on("cadastroErro", (data) => {
     const { id, erro } = data;
 
-    if (socket.id == id)
-        console.log(erro);
+
+    if (socket.id == id){
+        erroText.textContent = erro;    
+    }
+
 });
 
 /* Cronômetro */
