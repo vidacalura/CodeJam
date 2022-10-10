@@ -30,7 +30,7 @@ io.on("connection", async (socket) => {
     let usernames = [];
 
     db.promise()
-    .execute("SELECT * FROM usuarios")
+    .execute("SELECT username FROM usuarios")
     .then(async ([rows]) => {
         // Pegar dados (nome) do banco
         for (let i = 0; i < rows.length; i++){
@@ -55,20 +55,20 @@ io.on("connection", async (socket) => {
         
         // Validar se conta existe no Codewars
         if (!APIData.username){
-            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Não foi possível encontrar esta conta :(" });
+            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Não foi possível encontrar essa conta :(" });
         }
         else if (APIData.honor > 2){
             io.sockets.emit("cadastroErro", { id: socket.id, erro: "Conta inválida." });
         }
         // Validar se já está cadastrado
         else if (usuarioExiste(data, usernames)){
-            io.sockets.emit("cadastroErro", { id: socket.id, erro: "Usuário já cadastrado" });
+            io.sockets.emit("login", { id: socket.id, username: data })
         }
         else{
             db.promise()
-            .execute(`INSERT INTO usuarios (username, data_cad) VALUES('${data}', CURDATE())`);
+            .execute(`INSERT INTO usuarios (username, data_cad) VALUES(?, CURDATE())`, [data]);
 
-            io.sockets.emit("cadastroSucesso", { id: socket.id, username: data });
+            io.sockets.emit("login", { id: socket.id, username: data });
         }
 
     });

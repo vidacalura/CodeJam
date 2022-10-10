@@ -71,6 +71,15 @@ a{
 #sessao-div{
 
     display: none;
+    align-items: center;
+    gap: 1rem;
+
+}
+#sessao-div i{
+
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
 
 }
 
@@ -82,7 +91,6 @@ a{
     background-color: #1a1a1b;
     text-align: center;
     padding: 12rem 1rem 0px 1rem;
-    display: none;
 
 }
 #cronometro-texto{
@@ -420,9 +428,36 @@ a{
 
     }
 
+    #inscricao-form{
+
+        width: 80vw;
+
+    }
+    #inscricao-form h2 {
+
+        padding: 0px;
+
+    }
+    #inscricao-form div {
+
+        width: auto;
+
+    }
+    #form-pt-dir {
+
+        width: 100%;
+        padding: 4rem 2rem;
+
+    }
+    #cad-btn{
+
+        margin: 2rem;
+
+    }
     #form-pt-esq{
 
         display: none;
+        width: 0px;
 
     }
 

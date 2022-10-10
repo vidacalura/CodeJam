@@ -7,6 +7,7 @@ const cadBtn = document.getElementById("cad-btn");
 const erroText = document.getElementById("erro-cad");
 const sessaoDiv = document.getElementById("sessao-div");
 const sessaoNome = document.getElementById("sessao-nome");
+const sessaoSairBtn = document.getElementById("sair-btn");
 const nomeCompetidoresText = document.querySelectorAll(".ranking-nome");
 const pontosCompetidoresText = document.querySelectorAll(".ranking-pontos");
 const cronometroTexto = document.getElementById("cronometro-texto");
@@ -43,6 +44,11 @@ cadBtn.addEventListener("click", (e) => {
         socket.emit("cadastrarNovoUsuario", cadTextbox.value.trim());
 });
 
+sessaoSairBtn.addEventListener("click", () => {
+    localStorage.clear();
+    window.location.reload();
+});
+
 
 socket.on("participantesRes", (data) => {
     const participantesOrdenados = data;
@@ -72,13 +78,13 @@ socket.on("participantesRes", (data) => {
         }
 
         formBtn.style.display = "none";
-        sessaoDiv.style.display = "block";
+        sessaoDiv.style.display = "flex";
 
         sessaoNome.textContent = localStorage.getItem("username");
     }
 }); 
 
-socket.on("cadastroSucesso", (data) => {
+socket.on("login", (data) => {
     const { id, username } = data;
     
     if (socket.id == id){
