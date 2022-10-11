@@ -388,9 +388,19 @@ a{
         padding: 1.25rem 0.4rem;
 
     }
-    .nav-nav{
+    nav h1{
 
-        justify-content: space-around;
+        font-size: 18px;
+
+    }
+    nav p{
+
+        font-size: 12px;
+
+    }
+    #nav-nav{
+
+        gap: 0.5rem;
 
     }
     .dados-ranking{

@@ -57,7 +57,7 @@ io.on("connection", async (socket) => {
         if (!APIData.username){
             io.sockets.emit("cadastroErro", { id: socket.id, erro: "Não foi possível encontrar essa conta :(" });
         }
-        else if (APIData.honor > 2){
+        else if (APIData.honor > 3){
             io.sockets.emit("cadastroErro", { id: socket.id, erro: "Conta inválida." });
         }
         // Validar se já está cadastrado
