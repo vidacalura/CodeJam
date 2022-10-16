@@ -85,18 +85,13 @@ a{
 
 #cronometro-div{
 
-    position: absolute;
-    width: calc(100vw - 2rem);
-    height: 100vh;
-    background-color: #1a1a1b;
-    text-align: center;
-    padding: 12rem 1rem 0px 1rem;
+    padding: 0px 3rem;
 
 }
 #cronometro-texto{
 
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: normal;
 
 }
 
