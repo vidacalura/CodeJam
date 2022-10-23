@@ -27,26 +27,41 @@ app.get("/ajuda", (req, res) => {
 
 io.on("connection", async (socket) => {
 
-    let usernames = [];
+    let usernames = ["GuedeX", "pedrao", "Raffles Giorgi", "Batman220206"];
 
+    /* 
     db.promise()
     .execute("SELECT username FROM usuarios")
     .then(async ([rows]) => {
         // Pegar dados (nome) do banco
         for (let i = 0; i < rows.length; i++){
             usernames.push(rows[i].username)
-        }
+        } 
+    */
         
         const nomes = usernames;
 
         // Puxar dados da API do codewars
-        const participantes = await receberDadosAPI(nomes);
+        const participantes = [
+            {
+                username: "GuedeX",
+                honor: 136
+            },
+            {
+                username: "Raffles Giorgi",
+                honor: 17
+            },
+            {
+                username: "Batman220206",
+                honor: 41
+            }
+        ]
 
         const participantesOrdenados = organizarParticipantes(participantes);
 
         io.sockets.emit("participantesRes", participantesOrdenados);
 
-    });
+    // });
 
     socket.on("cadastrarNovoUsuario", async (data) => {
     

@@ -28,6 +28,12 @@ a{
     color: #7389db;
 
 }
+main{
+
+    background: url(https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Facegif.com%2Fwp-content%2Fuploads%2F2020%2F05%2Fconfetti.gif&sp=1666452368T70a7e8f50a050ac249d5cbf88754f3454f7b30eee6b6f0cf154b9ed2de83e9ab);
+    height: calc(100vh - 4.75rem);
+
+}
 #nav-nav{
 
     display: flex;

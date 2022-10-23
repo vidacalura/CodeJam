@@ -10,10 +10,8 @@ const sessaoNome = document.getElementById("sessao-nome");
 const sessaoSairBtn = document.getElementById("sair-btn");
 const nomeCompetidoresText = document.querySelectorAll(".ranking-nome");
 const pontosCompetidoresText = document.querySelectorAll(".ranking-pontos");
-const cronometroTexto = document.getElementById("cronometro-texto");
 
 cad();
-cronometro();
 
 
 function cad(){
@@ -26,28 +24,6 @@ function cad(){
 }
 
 /* Registro */
-formBtn.addEventListener("click", () => {
-    bgForm.style.display = "block";
-});
-
-bgForm.addEventListener("click", (e) => {
-    if (e.target.id == bgForm.id){
-        if (bgForm.style.display == "block")
-            bgForm.style.display = "none";
-    }
-});
-
-cadBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    if (cadTextbox.value.trim() != "")
-        socket.emit("cadastrarNovoUsuario", cadTextbox.value.trim());
-});
-
-sessaoSairBtn.addEventListener("click", () => {
-    localStorage.clear();
-    window.location.reload();
-});
 
 
 socket.on("participantesRes", (data) => {
