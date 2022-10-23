@@ -6,5 +6,8 @@ A competição é muito simples, para cada exercício resolvido no Codewars é r
 (honor), após 1 semana (de 17/10 a 24/10), o jogador com mais pontos vence o torneio.
 
 ### Feito por:
+
 <a href="https://github.com/vidacalura"> vidacalura </a>
+
+
 <a href="https://github.com/TulioTheGreat"> TulioTheGreat </a>
